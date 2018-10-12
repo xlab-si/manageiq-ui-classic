@@ -27,7 +27,7 @@
         :label                      => _("Select Tags to apply"),
         :keys                       => keys})
   - when :service
-    - keys = [:src_configured_system_ids, :src_configuration_profile_id]
+    - keys = [:src_configured_system_ids, :src_pxe_image_id, :src_configuration_profile_id]
     = render(:partial => "prov_dialog_fieldset",
       :locals         => {:workflow => wf,
         :dialog                     => dialog,
