@@ -38,7 +38,8 @@
       - types = (@ct.id ? [] : [["<#{_('Choose')}>", nil]]) + [[_("Kickstart"), "CustomizationTemplateKickstart"],
         [_("Sysprep"), "CustomizationTemplateSysprep"],
         [_("CloudInit"), "CustomizationTemplateCloudInit"],
-        [_("Ignition"), "CustomizationTemplateIgnition"]]
+        [_("Ignition"), "CustomizationTemplateIgnition"],
+        [_("ESXi"), "CustomizationTemplateEsxi"]]
       .col-md-8
         = select_tag("typ",
                       options_for_select(types, @edit[:new][:typ]),
