@@ -1,0 +1,25 @@
+#main_div
+  %h3
+    = _("Affected Physical Servers")
+
+
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th
+          Physical Server Name
+        %th
+          Physical Server Id
+        %th
+          BIOS Settings Diff
+    %tbody
+      - @miq_request.miq_request_tasks.each do |task|
+        %tr
+          %td
+            = task.source.name
+          %td
+            = task.source.id
+          %td
+            %pre
+              = task.options
+
