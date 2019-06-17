@@ -2,7 +2,6 @@
   %h3
     = _("Affected Physical Servers")
 
-
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
@@ -11,7 +10,7 @@
         %th
           Physical Server Id
         %th
-          BIOS Settings Diff
+          BIOS Config Diff
     %tbody
       - @miq_request.miq_request_tasks.each do |task|
         %tr
@@ -20,6 +19,6 @@
           %td
             = task.source.id
           %td
-            %pre
-              = task.options
-
+            - task.options[:diff].each do |key, old, new|
+              %p
+                = "#{key}: #{old} -> #{new}"
