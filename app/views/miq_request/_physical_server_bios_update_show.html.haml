@@ -15,9 +15,9 @@
       - @miq_request.miq_request_tasks.each do |task|
         %tr
           %td
-            = task.source.name
+            = task.source&.name || 'DISCONNECTED'
           %td
-            = task.source.id
+            = task.source&.id || 'DISCONNECTED'
           %td
             - task.options[:diff].each do |key, old, new|
               %p
