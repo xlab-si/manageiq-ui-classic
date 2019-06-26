@@ -19,6 +19,6 @@
           %td
             = task.source&.id || 'DISCONNECTED'
           %td
-            - task.options[:diff].each do |key, old, new|
+            - (task.options[:diff] || []).each do |key, old, new|
               %p
                 = "#{key}: #{old} -> #{new}"
